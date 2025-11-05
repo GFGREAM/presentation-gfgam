@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="C:/Users/JulioCesarLopezMendo/OneDrive - GFG Capital/Documentos/Presentaciones JS/Miguel Partners/presentation/assets/">
+  <title>Slide 6 - From Excel to Enterprise Database</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 960px; height: 540px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: white; padding: 50px 60px;
+      position: relative; overflow: hidden;
+    }
+
+    /* ===== Animaciones ===== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* ===== Elementos ===== */
+    .logo {
+      position: absolute; top: 20px; right: 60px; height: 35px;
+      opacity: 0; animation: fadeIn 1.3s ease forwards; animation-delay: 0.3s;
+    }
+
+    .header {
+      margin-bottom: 18px;
+      opacity: 0; animation: fadeUp 1.2s ease forwards; animation-delay: 0.5s;
+    }
+
+    h1 {
+      font-size: 34px; font-weight: 700; color: #1A3B5D; margin-bottom: 5px;
+    }
+
+    .subtitle {
+      font-size: 14px; font-weight: 400; color: #23CAC5;
+    }
+
+    .comparison {
+      display: flex; gap: 20px; margin-bottom: 18px;
+      opacity: 0; animation: fadeUp 1.2s ease forwards; animation-delay: 0.8s;
+    }
+
+    .comparison-column {
+      flex: 1; background: #F8F9FA; padding: 18px;
+      border-radius: 4px; opacity: 0; transform: translateY(30px);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .comparison-column.before {
+      border-top: 4px solid #E74C3C; animation-delay: 1.0s;
+    }
+
+    .comparison-column.now {
+      border-top: 4px solid #23CAC5; animation-delay: 1.3s;
+    }
+
+    .column-header {
+      font-size: 16px; font-weight: 700; color: #1A3B5D; margin-bottom: 12px;
+    }
+
+    .item { margin-bottom: 12px; }
+
+    .item-label {
+      font-size: 11px; font-weight: 700; color: #1A3B5D; margin-bottom: 3px;
+    }
+
+    .item-value {
+      font-size: 11px; font-weight: 400; color: #555555; line-height: 1.4;
+    }
+
+    .problems-list, .benefits-list { list-style: none; padding-left: 0; margin-top: 8px; }
+
+    .problems-list li {
+      font-size: 10px; color: #555555; line-height: 1.5;
+      margin-bottom: 5px; padding-left: 15px; position: relative;
+      opacity: 0; animation: fadeUp 0.8s ease forwards;
+    }
+    .problems-list li::before {
+      content: "✗"; position: absolute; left: 0;
+      color: #E74C3C; font-weight: 700; font-size: 12px;
+    }
+
+    .benefits-list li {
+      font-size: 10px; color: #555555; line-height: 1.5;
+      margin-bottom: 5px; padding-left: 15px; position: relative;
+      opacity: 0; animation: fadeUp 0.8s ease forwards;
+    }
+    .benefits-list li::before {
+      content: "✓"; position: absolute; left: 0;
+      color: #23CAC5; font-weight: 700; font-size: 12px;
+    }
+
+    .stats-box {
+      background: linear-gradient(135deg, #1A3B5D 0%, #2D5A7B 100%);
+      padding: 15px 20px; border-radius: 4px;
+      opacity: 0; transform: translateY(30px);
+      animation: fadeUp 1.3s ease forwards; animation-delay: 1.6s;
+    }
+
+    .stats-title {
+      font-size: 13px; font-weight: 700; color: #6DD4D0; margin-bottom: 8px;
+    }
+
+    .stats-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    }
+
+    .stat-item {
+      font-size: 10px; color: white; line-height: 1.5;
+    }
+
+    .stat-item strong { color: #6DD4D0; font-weight: 700; }
+
+    .result {
+      font-size: 11px; color: #6DD4D0; font-weight: 600;
+      margin-top: 10px; font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <img src="GFG_AM_Square.png" alt="GFG AM Logo" class="logo">
+
+  <div class="header">
+    <h1>The Technology Leap: Data Management</h1>
+    <p class="subtitle">From Spreadsheets to Professional Database</p>
+  </div>
+
+  <div class="comparison">
+    <div class="comparison-column before">
+      <p class="column-header">BEFORE: The Old Way</p>
+      <div class="item">
+        <p class="item-label">"Server":</p>
+        <p class="item-value">OneDrive folders (cloud storage, not a real server)</p>
+      </div>
+      <div class="item">
+        <p class="item-label">"Database":</p>
+        <p class="item-value">Excel spreadsheets scattered across files</p>
+      </div>
+      <div class="item">
+        <p class="item-label">Problems:</p>
+        <ul class="problems-list">
+          <li>Manual consolidation taking hours every week</li>
+          <li>High risk of errors and data inconsistencies</li>
+          <li>No real-time information</li>
+          <li>Cannot handle growth beyond 15-20 properties</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="comparison-column now">
+      <p class="column-header">NOW: The Professional Way</p>
+      <div class="item">
+        <p class="item-label">Server:</p>
+        <p class="item-value">Microsoft Azure (enterprise cloud platform)</p>
+      </div>
+      <div class="item">
+        <p class="item-label">Database:</p>
+        <p class="item-value">PostgreSQL (industry-standard database system)</p>
+      </div>
+      <div class="item">
+        <p class="item-label">Benefits:</p>
+        <ul class="benefits-list">
+          <li>Automatic data consolidation - no manual work</li>
+          <li>Single source of truth - zero inconsistencies</li>
+          <li>Real-time information available 24/7</li>
+          <li>Can easily scale to 50+ properties</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-box">
+    <p class="stats-title">The Numbers Tell the Story:</p>
+    <div class="stats-grid">
+      <p class="stat-item"><strong>2019 to mid-2025:</strong> ~17,000 records collected manually (6 years)</p>
+      <p class="stat-item"><strong>Since migration (1 month):</strong> ~40,000 records collected automatically</p>
+    </div>
+    <p class="result">Result: More data in 1 month than 6 years combined - exponentially better analysis and service quality</p>
+  </div>
+</body>
+</html>

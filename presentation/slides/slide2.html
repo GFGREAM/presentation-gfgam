@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="C:/Users/JulioCesarLopezMendo/OneDrive - GFG Capital/Documentos/Presentaciones JS/Miguel Partners/presentation/assets/">
+    <title>Slide 2 - GFG AM Ecosystem</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 960px; height: 540px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: white; padding: 50px 60px; position: relative; overflow: hidden;
+        }
+        .logo { position: absolute; top: 20px; right: 60px; height: 35px; opacity: 0; animation: fadeIn 1.5s ease forwards; animation-delay: 0.3s; }
+        .header { margin-bottom: 25px; opacity: 0; animation: fadeUp 1.5s ease forwards; animation-delay: 0.5s; }
+        h1 { font-size: 36px; font-weight: 700; color: #1A3B5D; margin-bottom: 8px; }
+        .subtitle { font-size: 16px; font-weight: 400; color: #23CAC5; }
+        .divisions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        .division-card {
+            background: #F8F9FA;
+            border-left: 4px solid #23CAC5;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s ease forwards;
+        }
+        /* Animación escalonada */
+        .division-card:nth-child(1) { animation-delay: 0.8s; }
+        .division-card:nth-child(2) { animation-delay: 1.1s; }
+        .division-card:nth-child(3) { animation-delay: 1.4s; }
+        .division-card:nth-child(4) { animation-delay: 1.7s; }
+
+        .division-logo { height: 60px; width: auto; margin-bottom: 12px; object-fit: contain; object-position: left center; }
+        .division-name { font-size: 18px; font-weight: 700; color: #1A3B5D; margin-bottom: 6px; }
+        .division-description { font-size: 13px; font-weight: 400; color: #555555; line-height: 1.4; }
+
+        .key-message {
+            background: linear-gradient(135deg, #1A3B5D 0%, #2D5A7B 100%);
+            padding: 15px 25px;
+            text-align: center;
+            border-radius: 4px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards;
+            animation-delay: 2.2s;
+        }
+        .key-message p { font-size: 15px; font-weight: 500; color: white; font-style: italic; }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <img src="GFG_AM_Square.png" alt="GFG AM Logo" class="logo">
+    <div class="header">
+        <h1>GFG AM Ecosystem</h1>
+        <p class="subtitle">Four Specialized Divisions for Integrated Asset Management</p>
+    </div>
+    <div class="divisions-grid">
+        <div class="division-card">
+            <img src="Horizon_Logo.png" alt="Horizon Logo" class="division-logo">
+            <p class="division-name">Horizon - Full-Service Asset Management</p>
+            <p class="division-description">360° management model with complete commercial strategy</p>
+        </div>
+        <div class="division-card">
+            <img src="Elementa_Logo.png" alt="Elementa Logo" class="division-logo">
+            <p class="division-name">Elementa - Select-Service Solutions</p>
+            <p class="division-description">Modular services tailored to specific needs</p>
+        </div>
+        <div class="division-card">
+            <img src="Quanta_Logo.png" alt="Quanta Logo" class="division-logo">
+            <p class="division-name">Quanta - Business Intelligence & Data Platform</p>
+            <p class="division-description">Proprietary analytics transforming data into strategic decisions</p>
+        </div>
+        <div class="division-card">
+            <img src="Axis_Logo.png" alt="Axis Logo" class="division-logo">
+            <p class="division-name">Axis - Consulting & Capital Strategy</p>
+            <p class="division-description">Boutique advisory, operations, and capital alignment</p>
+        </div>
+    </div>
+    <div class="key-message">
+        <p>"Integrated ecosystem combining operations, data intelligence, and strategic consulting"</p>
+    </div>
+</body>
+</html>
