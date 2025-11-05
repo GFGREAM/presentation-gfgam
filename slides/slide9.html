@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="C:/Users/JulioCesarLopezMendo/OneDrive - GFG Capital/Documentos/Presentaciones JS/Miguel Partners/presentation/assets/">
+  <title>Slide 9 - Before vs After</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 960px; height: 540px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: white; padding: 50px 60px;
+      position: relative; overflow: hidden;
+    }
+
+    /* ==== Animaciones ==== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* ==== Elementos ==== */
+    .logo {
+      position: absolute; top: 20px; right: 60px; height: 35px;
+      opacity: 0; animation: fadeIn 1s ease forwards; animation-delay: 0.3s;
+    }
+
+    .header {
+      margin-bottom: 20px;
+      opacity: 0; animation: fadeUp 1.2s ease forwards; animation-delay: 0.5s;
+    }
+
+    h1 {
+      font-size: 34px; font-weight: 700; color: #1A3B5D; margin-bottom: 5px;
+    }
+
+    .subtitle {
+      font-size: 14px; font-weight: 400; color: #23CAC5;
+    }
+
+    .table-container {
+      width: 100%;
+      opacity: 0; animation: fadeUp 1.3s ease forwards; animation-delay: 0.8s;
+    }
+
+    table {
+      width: 100%; border-collapse: collapse; font-size: 11px;
+    }
+
+    thead th {
+      background: #1A3B5D; color: white;
+      padding: 10px 12px; text-align: left;
+      font-weight: 700; font-size: 12px;
+      border: 1px solid #DDDDDD;
+      animation: fadeUp 1s ease forwards;
+      opacity: 0;
+    }
+
+    thead th:nth-child(2) { background: #1A3B5D; }
+    thead th:nth-child(3) { background: #23CAC5; }
+
+    tbody tr {
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    /* delays progresivos por fila */
+    tbody tr:nth-child(1) { animation-delay: 1.0s; }
+    tbody tr:nth-child(2) { animation-delay: 1.1s; }
+    tbody tr:nth-child(3) { animation-delay: 1.2s; }
+    tbody tr:nth-child(4) { animation-delay: 1.3s; }
+    tbody tr:nth-child(5) { animation-delay: 1.4s; }
+    tbody tr:nth-child(6) { animation-delay: 1.5s; }
+    tbody tr:nth-child(7) { animation-delay: 1.6s; }
+    tbody tr:nth-child(8) { animation-delay: 1.7s; }
+    tbody tr:nth-child(9) { animation-delay: 1.8s; }
+    tbody tr:nth-child(10) { animation-delay: 1.9s; }
+
+    tbody td {
+      padding: 8px 12px; border: 1px solid #DDDDDD;
+      vertical-align: middle; line-height: 1.4;
+    }
+
+    tbody td:first-child {
+      font-weight: 700; color: #1A3B5D; background: #F8F9FA;
+    }
+
+    tbody td:nth-child(2),
+    tbody td:nth-child(3) {
+      color: #555555;
+    }
+
+    tbody tr:hover { background: #F8F9FA; }
+  </style>
+</head>
+<body>
+  <img src="GFG_AM_Square.png" alt="GFG AM Logo" class="logo">
+
+  <div class="header">
+    <h1>Before vs. After: The Transformation</h1>
+    <p class="subtitle">From Manual Processes to Automated Intelligence</p>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Aspect</th>
+          <th>Before (Excel-Based)</th>
+          <th>After (Quanta Platform)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Data Storage</td><td>50+ Excel files, SharePoint</td><td>Single PostgreSQL database</td></tr>
+        <tr><td>Data Updates</td><td>Manual entry, weekly</td><td>Automated, real-time</td></tr>
+        <tr><td>Dashboard Refresh</td><td>30 minutes per report</td><td>Instant (seconds)</td></tr>
+        <tr><td>Market Intelligence</td><td>Manual research, sporadic</td><td>Automated daily collection</td></tr>
+        <tr><td>Client Access</td><td>Email reports monthly</td><td>24/7 portal access</td></tr>
+        <tr><td>Scalability</td><td>Limited to 10 properties</td><td>Unlimited properties</td></tr>
+        <tr><td>Data Accuracy</td><td>High error rate</td><td>95% error reduction</td></tr>
+        <tr><td>Team Time on Data</td><td>40% of time</td><td>5% of time</td></tr>
+        <tr><td>Client Experience</td><td>Wait for reports</td><td>Self-service insights</td></tr>
+        <tr><td>Competitive Position</td><td>Standard industry</td><td>Technology leader</td></tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

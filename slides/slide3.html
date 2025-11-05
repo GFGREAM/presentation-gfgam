@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="C:/Users/JulioCesarLopezMendo/OneDrive - GFG Capital/Documentos/Presentaciones JS/Miguel Partners/presentation/assets/">
+    <title>Slide 3 - Quanta Platform</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 960px; height: 540px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: white; padding: 50px 60px; position: relative; overflow: hidden;
+        }
+        .logo { position: absolute; top: 20px; right: 60px; height: 35px; opacity: 0; animation: fadeIn 1.5s ease forwards; animation-delay: 0.3s; }
+        .header { margin-bottom: 20px; opacity: 0; animation: fadeUp 1.5s ease forwards; animation-delay: 0.5s; }
+        h1 { font-size: 34px; font-weight: 700; color: #1A3B5D; margin-bottom: 5px; }
+        .subtitle { font-size: 14px; font-weight: 400; color: #23CAC5; }
+        .content { display: flex; gap: 25px; }
+        .left-column { flex: 1; }
+        .right-column { flex: 1; }
+        .section { margin-bottom: 18px; }
+        .section-title { font-size: 15px; font-weight: 700; color: #1A3B5D; margin-bottom: 6px; }
+        .section-text { font-size: 12px; font-weight: 400; color: #555555; line-height: 1.5; margin-bottom: 8px; }
+        .features-list { list-style: none; padding-left: 0; }
+        .features-list li { font-size: 11px; color: #555555; line-height: 1.6; margin-bottom: 6px; padding-left: 18px; position: relative; }
+        .features-list li::before { content: "→"; position: absolute; left: 0; color: #23CAC5; font-weight: 700; }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #23CAC5 0%, #6DD4D0 100%);
+            padding: 12px 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1.5s ease forwards;
+            animation-delay: 1.8s;
+        }
+        .highlight-box p { font-size: 12px; font-weight: 600; color: white; line-height: 1.4; }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <img src="GFG_AM_Square.png" alt="GFG AM Logo" class="logo">
+    <div class="header">
+        <h1>Quanta: Our Intelligence Suite</h1>
+        <p class="subtitle">quanta.gfgam.com | "Powering clarity. Driving growth."</p>
+    </div>
+    <div class="content">
+        <div class="left-column">
+            <div class="section">
+                <p class="section-title">What is Quanta?</p>
+                <p class="section-text">The unified digital platform that transforms data into strategic decisions—consolidating all technologies into a single, client-facing solution with 100% GFG AM branding.</p>
+            </div>
+            <div class="section">
+                <p class="section-title">Quanta Core: The Intelligence Engine</p>
+                <p class="section-text">The foundational layer that powers everything:</p>
+                <ul class="features-list">
+                    <li><strong>Predictive Modeling</strong> - Forecasts demand, pricing sensitivity, and market shifts</li>
+                    <li><strong>Performance Synthesis</strong> - Integrates all data sources into unified insights</li>
+                    <li><strong>Sentiment Analysis</strong> - Interprets guest reviews to identify strengths and vulnerabilities</li>
+                    <li><strong>Strategic Recommendations</strong> - Surfaces actionable insights for pricing and positioning</li>
+                    <li><strong>Cross-Asset Benchmarking</strong> - Compares performance across properties and markets</li>
+                </ul>
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="section">
+                <p class="section-title">Meet Kai: Your Virtual Strategist</p>
+                <p class="section-text">An AI-powered intelligence node that blends predictive modeling, market insight, and performance synthesis to guide decisions with clarity and foresight. Kai operates quietly in the background—always watching, learning, and guiding.</p>
+            </div>
+            <div class="section">
+                <p class="section-title">What Clients See:</p>
+                <p class="section-text">Pure GFG AM experience - our brand, our platform, our intelligence. No external tool logos visible.</p>
+            </div>
+            <div class="highlight-box">
+                <p>Quanta consolidates cutting-edge analytics into a seamless, white-labeled platform that positions GFG AM as a true technology innovator in hospitality asset management.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

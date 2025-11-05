@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="C:/Users/JulioCesarLopezMendo/OneDrive - GFG Capital/Documentos/Presentaciones JS/Miguel Partners/presentation/assets/">
+  <title>Slide 8 - Business Intelligence</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 960px; height: 540px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: white; padding: 50px 60px;
+      position: relative; overflow: hidden;
+    }
+
+    /* ==== Animaciones ==== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* ==== Elementos ==== */
+    .logo {
+      position: absolute; top: 20px; right: 60px; height: 35px;
+      opacity: 0; animation: fadeIn 1.3s ease forwards; animation-delay: 0.3s;
+    }
+
+    .header {
+      margin-bottom: 18px;
+      opacity: 0; animation: fadeUp 1.2s ease forwards; animation-delay: 0.5s;
+    }
+
+    h1 {
+      font-size: 34px; font-weight: 700; color: #1A3B5D; margin-bottom: 5px;
+    }
+
+    .subtitle {
+      font-size: 14px; font-weight: 400; color: #23CAC5;
+    }
+
+    .content { display: flex; gap: 25px; }
+
+    .left-column { flex: 1; }
+    .right-column { flex: 1; }
+
+    .section { margin-bottom: 16px; }
+
+    .section-title {
+      font-size: 14px; font-weight: 700; color: #1A3B5D; margin-bottom: 6px;
+    }
+
+    .section-text {
+      font-size: 11px; font-weight: 400; color: #555555;
+      line-height: 1.5; margin-bottom: 8px;
+    }
+
+    .features-list { list-style: none; padding-left: 0; }
+
+    .features-list li {
+      font-size: 10px; color: #555555; line-height: 1.5;
+      margin-bottom: 5px; padding-left: 16px; position: relative;
+    }
+
+    .features-list li::before {
+      content: "✗"; position: absolute; left: 0;
+      color: #E74C3C; font-weight: 700; font-size: 11px;
+    }
+
+    .features-list.positive li::before {
+      content: "✓"; color: #23CAC5;
+    }
+
+    .embedded-box {
+      background: #F8F9FA; border-left: 4px solid #23CAC5;
+      padding: 12px 15px; margin-bottom: 12px;
+      opacity: 0; transform: translateY(30px);
+      animation: fadeUp 1s ease forwards; animation-delay: 0.9s;
+    }
+
+    .embedded-title {
+      font-size: 13px; font-weight: 700; color: #1A3B5D; margin-bottom: 6px;
+    }
+
+    .embedded-list { list-style: none; padding-left: 0; }
+
+    .embedded-list li {
+      font-size: 10px; color: #555555; line-height: 1.5;
+      margin-bottom: 4px; padding-left: 16px; position: relative;
+    }
+
+    .embedded-list li::before {
+      content: "→"; position: absolute; left: 0;
+      color: #23CAC5; font-weight: 700;
+    }
+
+    .result-box {
+      background: linear-gradient(135deg, #1A3B5D 0%, #2D5A7B 100%);
+      padding: 12px 18px; border-radius: 4px; margin-top: 18px;
+      opacity: 0; transform: translateY(30px);
+      animation: fadeUp 1.1s ease forwards; animation-delay: 1.2s;
+    }
+
+    .result-box p {
+      font-size: 12px; font-weight: 600; color: white; line-height: 1.4;
+    }
+
+    .result-label {
+      font-size: 11px; font-weight: 700; color: #6DD4D0;
+      margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+  <img src="GFG_AM_Square.png" alt="GFG AM Logo" class="logo">
+
+  <div class="header">
+    <h1>Foundation: Business Intelligence & Dashboards</h1>
+    <p class="subtitle">Power BI - Now Unleashed & White-Labeled</p>
+  </div>
+
+  <div class="content">
+    <div class="left-column">
+      <div class="section">
+        <p class="section-title">The Challenge We Had:</p>
+        <p class="section-text">Power BI has always been our visualization tool, BUT it was severely limited by our old technology:</p>
+        <ul class="features-list">
+          <li>30 minutes to refresh a single dashboard (with Excel files)</li>
+          <li>Limited connections due to OneDrive/Excel constraints</li>
+          <li>Slow, unreliable data loads</li>
+          <li>Constant manual refreshes needed</li>
+        </ul>
+      </div>
+      <div class="section">
+        <p class="section-title">The Transformation:</p>
+        <p class="section-text">Now connected directly to our PostgreSQL database:</p>
+        <ul class="features-list positive">
+          <li>Instant dashboard updates (seconds, not minutes)</li>
+          <li>Unlimited connections and queries</li>
+          <li>Real-time data always available</li>
+          <li>Automatic scheduled refreshes</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="right-column">
+      <div class="section">
+        <p class="section-title">Dashboard Suite (30+ planned):</p>
+        <ul class="features-list positive">
+          <li>Financial Performance (RevPAR, ADR, Occupancy)</li>
+          <li>Operational Metrics by property</li>
+          <li>Market Intelligence & Competitive Positioning</li>
+          <li>Predictive Analytics & Forecasting</li>
+          <li>Digital Presence & Guest Satisfaction</li>
+        </ul>
+      </div>
+
+      <div class="embedded-box">
+        <p class="embedded-title">Power BI Embedded: The Engine of Quanta</p>
+        <ul class="embedded-list">
+          <li>Professional white-label integration</li>
+          <li>Clients see only GFG AM branding - our logo, our colors, our platform</li>
+          <li>No Microsoft or external tool branding visible</li>
+          <li>Creates the impression of fully proprietary, in-house development</li>
+          <li>Full Power BI capabilities without visual dependency on external tools</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="result-box">
+    <p class="result-label">The Result:</p>
+    <p>Professional business intelligence that looks and feels 100% GFG AM</p>
+  </div>
+</body>
+</html>
