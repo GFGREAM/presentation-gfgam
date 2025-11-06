@@ -45,15 +45,46 @@
     }
 
     .content {
-      display: flex; gap: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
       opacity: 0; animation: fadeUp 1.3s ease forwards; animation-delay: 0.8s;
+      margin-bottom: 20px;
     }
 
-    .left-column { flex: 1; }
-    .right-column { flex: 1.2; display: flex; align-items: center; justify-content: center; }
+    .left-column { 
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .right-column { 
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .bottom-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-top: 10px;
+    }
+
+    .bottom-left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bottom-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
     .cost-category {
-      margin-bottom: 16px;
+      margin-bottom: 0;
       opacity: 0; transform: translateY(30px);
       animation: fadeUp 0.9s ease forwards;
     }
@@ -61,91 +92,276 @@
     /* delays por sección */
     .cost-category:nth-child(1) { animation-delay: 1.0s; }
     .cost-category:nth-child(2) { animation-delay: 1.2s; }
-    .cost-category:nth-child(3) { animation-delay: 1.4s; }
-    .cost-category:nth-child(4) { animation-delay: 1.6s; }
 
     .category-title {
-      font-size: 13px; font-weight: 700; color: #1A3B5D; margin-bottom: 6px;
+      font-size: 12px; font-weight: 700; color: #1A3B5D; margin-bottom: 4px;
+    }
+
+    .cost-headers {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 8px;
+      font-size: 9px;
+      font-weight: 700;
+      color: #1A3B5D;
+      margin-bottom: 4px;
+      padding-left: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .cost-headers span {
+      text-align: right;
+    }
+
+    .cost-headers span:first-child {
+      text-align: left;
     }
 
     .cost-item {
-      display: flex; justify-content: space-between;
-      font-size: 11px; color: #555555; margin-bottom: 4px; padding-left: 12px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 8px;
+      font-size: 10px; color: #555555; margin-bottom: 3px; padding-left: 10px;
     }
 
     .cost-name { flex: 1; }
-    .cost-value { font-weight: 600; color: #1A3B5D; }
+    .cost-value { font-weight: 600; color: #1A3B5D; text-align: right; }
+
+    .subtotal {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #1A3B5D;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      padding: 6px 10px;
+      background: #F0F0F0;
+      border-radius: 4px;
+    }
+
+    .subtotal span {
+      text-align: right;
+    }
+
+    .subtotal span:first-child {
+      text-align: left;
+    }
 
     .total-box {
       background: linear-gradient(135deg, #23CAC5 0%, #6DD4D0 100%);
       padding: 15px 20px;
       border-radius: 4px;
-      text-align: center;
-      margin-top: 20px;
+      width: 100%;
       opacity: 0; transform: translateY(30px);
       animation: fadeUp 1s ease forwards; animation-delay: 1.9s;
     }
 
-    .total-text {
+    .total-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .total-label {
       font-size: 16px; font-weight: 700; color: white;
       text-transform: uppercase; letter-spacing: 0.5px;
     }
 
-    .total-text span { margin-left: 8px; color: white; }
+    .total-value {
+      font-size: 16px; font-weight: 700; color: white;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
 
-    .right-column img {
-      width: 100%; border-radius: 6px; border: 1px solid #ddd;
+    .total-value .value-label {
+      font-size: 9px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      opacity: 0.9;
+    }
+
+    .total-value .value-amount {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .bottom-right img {
+      width: 100%; 
+      max-height: 180px;
+      object-fit: contain;
+      border-radius: 6px; 
+      border: 1px solid #ddd;
+      opacity: 0; transform: scale(0.95);
+      animation: fadeUp 1.2s ease forwards; animation-delay: 2.1s;
+    }
+
+    .bottom-left img {
+      width: 100%; 
+      max-height: 180px;
+      object-fit: contain;
+      border-radius: 6px; 
+      border: 1px solid #ddd;
       opacity: 0; transform: scale(0.95);
       animation: fadeUp 1.2s ease forwards; animation-delay: 2.1s;
     }
   </style>
 </head>
 <body>
-  <img src="../assets/GFG_AM_Square.png"" alt="GFG AM Logo" class="logo">
+  <img src="../assets/GFG_AM_Square.png" alt="GFG AM Logo" class="logo">
 
   <div class="header">
     <h1>Current Infrastructure Investment</h1>
-    <p class="subtitle">Annual Technology Expenses</p>
+    <p class="subtitle">Monthly & Annual Technology Expenses</p>
   </div>
 
   <div class="content">
+    <!-- Left Column: Core Infrastructure + Data Intelligence -->
     <div class="left-column">
       <div class="cost-category">
         <p class="category-title">Core Infrastructure:</p>
-        <div class="cost-item"><span class="cost-name">Azure Cloud Services</span><span class="cost-value">$1,200</span></div>
-        <div class="cost-item"><span class="cost-name">n8n Automation</span><span class="cost-value">$240</span></div>
-        <div class="cost-item"><span class="cost-name">Power BI (14 users)</span><span class="cost-value">$2,016</span></div>
+        <div class="cost-headers">
+          <span></span>
+          <span>Monthly</span>
+          <span>Annual</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-name">Azure Cloud Services</span>
+          <span class="cost-value">$100</span>
+          <span class="cost-value">$1,200</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-name">n8n Automation</span>
+          <span class="cost-value">$20</span>
+          <span class="cost-value">$240</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-name">Power BI (14 users)</span>
+          <span class="cost-value">$168</span>
+          <span class="cost-value">$2,016</span>
+        </div>
+        <div class="subtotal">
+          <span>Subtotal</span>
+          <span>$288</span>
+          <span>$3,456</span>
+        </div>
       </div>
 
       <div class="cost-category">
         <p class="category-title">Data Intelligence Tools:</p>
-        <div class="cost-item"><span class="cost-name">SERP API</span><span class="cost-value">$900</span></div>
-        <div class="cost-item"><span class="cost-name">ScrapingBee</span><span class="cost-value">$588</span></div>
-        <div class="cost-item"><span class="cost-name">APIFY</span><span class="cost-value">$468</span></div>
-        <div class="cost-item"><span class="cost-name">Copilot Add-on</span><span class="cost-value">$360</span></div>
+        <div class="cost-item">
+          <span class="cost-name">SERP API</span>
+          <span class="cost-value">$75</span>
+          <span class="cost-value">$900</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-name">ScrapingBee</span>
+          <span class="cost-value">$49</span>
+          <span class="cost-value">$588</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-name">APIFY</span>
+          <span class="cost-value">$39</span>
+          <span class="cost-value">$468</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-name">Copilot Add-on*</span>
+          <span class="cost-value">$30</span>
+          <span class="cost-value">$360</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-name">ChatGPT</span>
+          <span class="cost-value">$20</span>
+          <span class="cost-value">$240</span>
+        </div>
+        <div class="subtotal">
+          <span>Subtotal</span>
+          <span>$213</span>
+          <span>$2,556</span>
+        </div>
       </div>
+    </div>
 
+    <!-- Right Column: Market Intelligence + Operations & Platform -->
+    <div class="right-column">
       <div class="cost-category">
         <p class="category-title">Market Intelligence:</p>
-        <div class="cost-item"><span class="cost-name">Lighthouse</span><span class="cost-value">$17,920</span></div>
-        <div class="cost-item"><span class="cost-name">CoStar</span><span class="cost-value">$18,300</span></div>
+        <div class="cost-headers">
+          <span></span>
+          <span>Monthly</span>
+          <span>Annual</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-name">Lighthouse</span>
+          <span class="cost-value">$1,000</span>
+          <span class="cost-value">$12,000</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-name">CoStar</span>
+          <span class="cost-value">$1,525</span>
+          <span class="cost-value">$18,300</span>
+        </div>
+        <div class="subtotal">
+          <span>Subtotal</span>
+          <span>$2,525</span>
+          <span>$30,300</span>
+        </div>
       </div>
 
       <div class="cost-category">
         <p class="category-title">Operations & Platform:</p>
-        <div class="cost-item"><span class="cost-name">GoAudits</span><span class="cost-value">$1,080</span></div>
-        <div class="cost-item"><span class="cost-name">USALI</span><span class="cost-value">$80</span></div>
-        <div class="cost-item"><span class="cost-name">Power BI Embedded</span><span class="cost-value">$6,000</span></div>
+        <div class="cost-item">
+          <span class="cost-name">GoAudits</span>
+          <span class="cost-value">$90</span>
+          <span class="cost-value">$1,080</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-name">USALI</span>
+          <span class="cost-value">$6.67</span>
+          <span class="cost-value">$80</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-name">Power BI Embedded*</span>
+          <span class="cost-value">$500</span>
+          <span class="cost-value">$6,000</span>
+        </div>
+        <div class="subtotal">
+          <span>Subtotal</span>
+          <span>$596.67</span>
+          <span>$7,160</span>
+        </div>
       </div>
-
-      <div class="total-box">
-        <p class="total-text">Total Annual Cost: <span>$49,152</span></p>
-      </div>
-    </div>
-
-    <div class="right-column">
-      <img src="../assets/bar_chart.png"" alt="Technology Cost Bar Chart">
     </div>
   </div>
+
+  <!-- Bottom Section: Chart + Total -->
+  <div class="bottom-section">
+    <div class="bottom-left">
+      <img src="../assets/bar_chart.png" alt="Technology Cost Bar Chart">
+    </div>
+
+    <div class="bottom-right">
+      <div class="total-box">
+        <div class="total-grid">
+          <span class="total-label">Total Cost:</span>
+          <div class="total-value">
+            <span class="value-label">Monthly</span>
+            <span class="value-amount">$3,622.67</span>
+          </div>
+          <div class="total-value">
+            <span class="value-label">Annual</span>
+            <span class="value-amount">$43,472</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
