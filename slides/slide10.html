@@ -36,12 +36,80 @@
       opacity: 0; animation: fadeUp 1.2s ease forwards; animation-delay: 0.5s;
     }
 
+    .header-text {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 8px;
+    }
+
     h1 {
       font-size: 34px; font-weight: 700; color: #1A3B5D; margin-bottom: 5px;
     }
 
     .subtitle {
       font-size: 14px; font-weight: 400; color: #23CAC5;
+      white-space: nowrap;
+    }
+
+    /* ===== Logo Flow ===== */
+    .flow-container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 8px;
+    }
+
+    .logo-box {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: white;
+      border: 1.5px solid #E8ECF1;
+      border-radius: 4px;
+      padding: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .logo-box:hover {
+      border-color: #23CAC5;
+      box-shadow: 0 4px 10px rgba(35, 202, 197, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .logo-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+    }
+
+    .logo-box.quanta img {
+      filter: grayscale(0%);
+    }
+
+    .logo-box:hover img {
+      filter: grayscale(0%);
+    }
+
+    .flow-arrow {
+      color: #23CAC5;
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .flow-brace {
+      color: #23CAC5;
+      font-size: 35px;
+      font-weight: 300;
+      flex-shrink: 0;
+      line-height: 0.8;
+      margin: 0 -2px;
     }
 
     .comparison {
@@ -127,11 +195,50 @@
   </style>
 </head>
 <body>
-  <img src="../assets/GFG_AM_Square.png"" alt="GFG AM Logo" class="logo">
+  <img src="../assets/GFG_AM_Square.png" alt="GFG AM Logo" class="logo">
 
   <div class="header">
     <h1>The Technology Leap: Data Management</h1>
-    <p class="subtitle">From Spreadsheets to Professional Database</p>
+    
+    <div class="header-text">
+      <p class="subtitle">From Spreadsheets to Professional Database</p>
+
+      <!-- Logo Flow Diagram -->
+      <div class="flow-container">
+        <!-- Azure -->
+        <div class="logo-box">
+          <img src="../assets/Microsoft_Azure.png" alt="Azure">
+        </div>
+
+        <div class="flow-brace">{</div>
+
+        <!-- PostgreSQL -->
+        <div class="logo-box">
+          <img src="../assets/postgresql.jpg" alt="PostgreSQL">
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <!-- n8n -->
+        <div class="logo-box">
+          <img src="../assets/n8n.png" alt="n8n">
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <!-- Power BI -->
+        <div class="logo-box">
+          <img src="../assets/Power_BI_Logo.png" alt="Power BI">
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <!-- Quanta -->
+        <div class="logo-box quanta">
+          <img src="../assets/Quanta_Logo.png" alt="Quanta">
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="comparison">
