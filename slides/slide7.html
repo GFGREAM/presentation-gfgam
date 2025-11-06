@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="./">
+  <title>Slide - PostgreSQL Foundation</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 960px; height: 540px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: white; padding: 50px 60px;
+      position: relative; overflow: hidden;
+    }
+
+    /* ==== Animaciones ==== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* ==== Elementos ==== */
+    .logo {
+      position: absolute; top: 20px; right: 60px; height: 35px;
+      opacity: 0; animation: fadeIn 1.3s ease forwards; animation-delay: 0.3s;
+    }
+
+    .header {
+      margin-bottom: 18px;
+      opacity: 0; animation: fadeUp 1.2s ease forwards; animation-delay: 0.5s;
+    }
+
+    h1 {
+      font-size: 34px; font-weight: 700; color: #1A3B5D; margin-bottom: 5px;
+    }
+
+    .subtitle {
+      font-size: 14px; font-weight: 400; color: #23CAC5;
+    }
+
+    .content { display: flex; gap: 25px; }
+
+    .left-column { flex: 1; }
+    .right-column { flex: 1; }
+
+    .section { margin-bottom: 16px; }
+
+    .section-title {
+      font-size: 14px; font-weight: 700; color: #1A3B5D; margin-bottom: 6px;
+    }
+
+    .section-text {
+      font-size: 11px; font-weight: 400; color: #555555;
+      line-height: 1.5; margin-bottom: 8px;
+    }
+
+    .features-list { list-style: none; padding-left: 0; }
+
+    .features-list li {
+      font-size: 10px; color: #555555; line-height: 1.5;
+      margin-bottom: 5px; padding-left: 16px; position: relative;
+    }
+
+    .features-list li::before {
+      content: "✗"; position: absolute; left: 0;
+      color: #E74C3C; font-weight: 700; font-size: 11px;
+    }
+
+    .features-list.positive li::before {
+      content: "✓"; color: #23CAC5;
+    }
+
+    .features-list.arrow li::before {
+      content: "→"; color: #23CAC5;
+    }
+
+    .impact-box {
+      background: #23CAC5;
+      padding: 15px 18px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      opacity: 0; transform: translateY(30px);
+      animation: fadeUp 1s ease forwards; animation-delay: 0.9s;
+    }
+
+    .impact-title {
+      font-size: 13px; font-weight: 700; color: white; margin-bottom: 8px;
+    }
+
+    .impact-list { list-style: none; padding-left: 0; }
+
+    .impact-list li {
+      font-size: 10px; color: white; line-height: 1.5;
+      margin-bottom: 5px; padding-left: 16px; position: relative;
+      font-weight: 500;
+    }
+
+    .impact-list li::before {
+      content: "✓"; position: absolute; left: 0;
+      color: white; font-weight: 700; font-size: 11px;
+    }
+
+    .architecture-box {
+      background: #F8F9FA;
+      border-left: 4px solid #23CAC5;
+      padding: 12px 15px;
+      margin-bottom: 12px;
+      opacity: 0; transform: translateY(30px);
+      animation: fadeUp 1s ease forwards; animation-delay: 1.1s;
+    }
+
+    .architecture-title {
+      font-size: 13px; font-weight: 700; color: #1A3B5D; margin-bottom: 6px;
+    }
+
+    .result-box {
+      background: linear-gradient(135deg, #1A3B5D 0%, #2D5A7B 100%);
+      padding: 12px 18px; border-radius: 4px; margin-top: 18px;
+      opacity: 0; transform: translateY(30px);
+      animation: fadeUp 1.1s ease forwards; animation-delay: 1.3s;
+    }
+
+    .result-box p {
+      font-size: 12px; font-weight: 600; color: white; line-height: 1.4;
+    }
+
+    .result-label {
+      font-size: 11px; font-weight: 700; color: #6DD4D0;
+      margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+  <img src="../assets/GFG_AM_Square.png" alt="GFG AM Logo" class="logo">
+
+  <div class="header">
+    <h1>Foundation: Database Infrastructure</h1>
+    <p class="subtitle">PostgreSQL - Enterprise-Grade Data Management</p>
+  </div>
+
+  <div class="content">
+    <div class="left-column">
+      <div class="section">
+        <p class="section-title">The Challenge We Had:</p>
+        <p class="section-text">Excel and OneDrive were our "database", BUT this created serious limitations:</p>
+        <ul class="features-list">
+          <li>Data scattered across multiple Excel files</li>
+          <li>Manual consolidation required for reports</li>
+          <li>Limited to ~1M rows per file</li>
+          <li>Multiple file versions without proper tracking or governance</li>
+          <li>No data validation or relationship enforcement</li>
+          <li>Concurrent access issues when multiple users needed data</li>
+        </ul>
+      </div>
+      <div class="section">
+        <p class="section-title">The Transformation:</p>
+        <p class="section-text">Now powered by PostgreSQL - a professional-grade relational database:</p>
+        <ul class="features-list positive">
+          <li>Centralized data storage with unlimited scalability</li>
+          <li>Real-time access for all users simultaneously</li>
+          <li>Handles millions of records without performance bottlenecks</li>
+          <li>Automated data validation and integrity checks</li>
+          <li>Advanced querying capabilities for complex analysis</li>
+          <li>Direct connections to all our tools (n8n, Power BI, APIs)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="right-column">
+      <div class="impact-box">
+        <p class="impact-title">Impact:</p>
+        <ul class="impact-list">
+          <li>100+ million rows managed efficiently</li>
+          <li>Sub-second query responses for critical reports</li>
+          <li>Zero data loss with automated daily backups</li>
+          <li>Single source of truth for all hotel data</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Database Architecture:</p>
+        <ul class="features-list arrow">
+          <li><strong>raw schema:</strong> Direct ingestion from external sources</li>
+          <li><strong>core schema:</strong> Cleaned and validated data</li>
+          <li><strong>marts schema:</strong> Pre-aggregated data for dashboards</li>
+          <li><strong>audit schema:</strong> Complete activity logging for compliance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="result-box">
+    <p class="result-label">The Result:</p>
+    <p>Professional data infrastructure that scales with our growth and ensures data integrity</p>
+  </div>
+</body>
+</html>
