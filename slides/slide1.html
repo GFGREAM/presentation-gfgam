@@ -11,7 +11,7 @@
             width: 960px; height: 540px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: white;
-            padding: 40px 60px;
+            padding: 35px 60px;
             position: relative;
             overflow: hidden;
         }
@@ -29,7 +29,7 @@
 
         /* ==== Header ==== */
         .header {
-            margin-bottom: 20px;
+            margin-bottom: 12px;
             opacity: 0;
             animation: fadeUp 1.5s ease forwards;
             animation-delay: 0.5s;
@@ -52,19 +52,19 @@
         .org-chart {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 6px;
         }
 
         /* ==== Head Card (Miguel) ==== */
         .head-card {
             background: linear-gradient(135deg, #1A3B5D 0%, #2D5A7B 100%);
             border-radius: 8px;
-            padding: 15px 20px;
+            padding: 12px 20px;
             display: flex;
             align-items: center;
             gap: 15px;
             width: 50%;
-            margin: 0 auto 15px auto;
+            margin: 0 auto 10px auto;
             box-shadow: 0 4px 12px rgba(26, 59, 93, 0.15);
             opacity: 0;
             animation: fadeUp 1s ease forwards;
@@ -77,9 +77,9 @@
         }
 
         .head-photo {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
+            width: 65px;
+            height: 65px;
+            border-radius: 8px;
             border: 3px solid #23CAC5;
             object-fit: cover;
         }
@@ -112,8 +112,8 @@
         .departments-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 12px;
+            gap: 10px;
+            margin-bottom: 6px;
         }
 
         /* ==== Department Box ==== */
@@ -147,23 +147,33 @@
 
         .team-members {
             display: flex;
-            gap: 10px;
+            flex-direction: column;
+            gap: 8px;
         }
 
         /* ==== Team Member Card ==== */
         .member-card {
-            flex: 1;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            padding: 8px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .member-card:hover {
+            background: #F8F9FA;
+            transform: translateX(5px);
         }
 
         .member-photo {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            border-radius: 8px;
             border: 2px solid #E8ECF1;
             object-fit: cover;
-            margin: 0 auto 6px auto;
-            display: block;
+            flex-shrink: 0;
             transition: all 0.3s ease;
         }
 
@@ -172,18 +182,23 @@
             transform: scale(1.05);
         }
 
+        .member-info {
+            flex: 1;
+            text-align: left;
+        }
+
         .member-name {
-            font-size: 11px;
+            font-size: 13px;
             font-weight: 700;
             color: #1A3B5D;
-            margin-bottom: 2px;
+            margin-bottom: 3px;
         }
 
         .member-title {
-            font-size: 8.5px;
+            font-size: 10px;
             font-weight: 500;
             color: #555555;
-            line-height: 1.3;
+            line-height: 1.4;
         }
 
         /* ==== Bottom Section (Business Analysis) ==== */
@@ -214,8 +229,8 @@
 
         .bottom-members {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
         }
 
         /* ==== Animations ==== */
@@ -257,13 +272,17 @@
                 <div class="team-members">
                     <div class="member-card">
                         <img src="../assets/Leonardo.jpg" alt="Leonardo Cueva" class="member-photo">
-                        <div class="member-name">Leonardo Cueva</div>
-                        <div class="member-title">SVP Hotel Operations<br>Client Services<br>(Operations Efficiency)</div>
+                        <div class="member-info">
+                            <div class="member-name">Leonardo Cueva</div>
+                            <div class="member-title">SVP Hotel Operations • Client Services<br>(Operations Efficiency)</div>
+                        </div>
                     </div>
                     <div class="member-card">
                         <img src="../assets/Alvaro.jpg" alt="Alvaro Sanchez" class="member-photo">
-                        <div class="member-name">Alvaro Sanchez</div>
-                        <div class="member-title">VP Hotel Operations<br>Client Services<br>(Operations Efficiency)</div>
+                        <div class="member-info">
+                            <div class="member-name">Alvaro Sanchez</div>
+                            <div class="member-title">VP Hotel Operations • Client Services<br>(Operations Efficiency)</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -274,13 +293,17 @@
                 <div class="team-members">
                     <div class="member-card">
                         <img src="../assets/Karina.jpg" alt="Karina Gomez" class="member-photo">
-                        <div class="member-name">Karina Gomez</div>
-                        <div class="member-title">Sr Associate Ops<br>Brand & Experiences<br>(Client Journey)</div>
+                        <div class="member-info">
+                            <div class="member-name">Karina Gomez</div>
+                            <div class="member-title">Sr Associate Ops • Brand & Experiences<br>(Client Journey)</div>
+                        </div>
                     </div>
                     <div class="member-card">
                         <img src="../assets/Ana.jpg" alt="Ana Borja" class="member-photo">
-                        <div class="member-name">Ana Borja</div>
-                        <div class="member-title">Associate Commercial<br>Commercial Strategy<br>(Top Line Performance)</div>
+                        <div class="member-info">
+                            <div class="member-name">Ana Borja</div>
+                            <div class="member-title">Associate Commercial • Commercial Strategy<br>(Top Line Performance)</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -292,23 +315,31 @@
             <div class="bottom-members">
                 <div class="member-card">
                     <img src="../assets/Jose.jpg" alt="Jose Salomon" class="member-photo">
-                    <div class="member-name">Jose Salomon</div>
-                    <div class="member-title">Business Analysis<br>Business Data<br>(Performance)</div>
+                    <div class="member-info">
+                        <div class="member-name">Jose Salomon</div>
+                        <div class="member-title">Business Analysis • Business Data<br>(Performance)</div>
+                    </div>
                 </div>
                 <div class="member-card">
                     <img src="../assets/Julio.jpg" alt="Julio Lopez" class="member-photo">
-                    <div class="member-name">Julio Lopez</div>
-                    <div class="member-title">Data Intel Analysis<br>Business Intel Tech<br>(Intel & Research)</div>
+                    <div class="member-info">
+                        <div class="member-name">Julio Lopez</div>
+                        <div class="member-title">Data Intel Analysis • Business Intel Tech<br>(Intel & Research)</div>
+                    </div>
                 </div>
                 <div class="member-card">
                     <img src="../assets/Edgar.jpg" alt="Edgar Torroella" class="member-photo">
-                    <div class="member-name">Edgar Torroella</div>
-                    <div class="member-title">Data Business Tech<br>Business Admin Tech<br>(Reporting Portal)</div>
+                    <div class="member-info">
+                        <div class="member-name">Edgar Torroella</div>
+                        <div class="member-title">Data Business Tech • Business Admin Tech<br>(Reporting Portal)</div>
+                    </div>
                 </div>
                 <div class="member-card">
                     <img src="../assets/Kai.jpg" alt="Kai" class="member-photo">
-                    <div class="member-name">Kai</div>
-                    <div class="member-title">Virtual Analyst<br>Quanta Core<br>(AI Support)</div>
+                    <div class="member-info">
+                        <div class="member-name">Kai</div>
+                        <div class="member-title">Virtual Analyst • Quanta Core<br>(AI Support)</div>
+                    </div>
                 </div>
             </div>
         </div>
