@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="./">
+    <title>GFG AM Vision & Mission</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 960px; height: 540px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: white;
+            padding: 50px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ==== Logo ==== */
+        .logo {
+            position: absolute;
+            top: 20px;
+            right: 60px;
+            height: 35px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        /* ==== Header ==== */
+        .header {
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeUp 1.5s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1A3B5D;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            color: #23CAC5;
+        }
+
+        /* ==== Content Layout ==== */
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        /* ==== Card Styling ==== */
+        .vision-card,
+        .mission-card {
+            border-radius: 8px;
+            padding: 35px 40px;
+            opacity: 0;
+            animation: fadeUp 1.2s ease forwards;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(26, 59, 93, 0.15);
+        }
+
+        .vision-card {
+            background: linear-gradient(135deg, #23CAC5 0%, #6DD4D0 100%);
+            animation-delay: 0.8s;
+        }
+
+        .mission-card {
+            background: linear-gradient(135deg, #1A3B5D 0%, #2D5A7B 100%);
+            animation-delay: 1.0s;
+        }
+
+        .vision-card:hover,
+        .mission-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(26, 59, 93, 0.25);
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .section-text {
+            font-size: 17px;
+            font-weight: 400;
+            color: white;
+            line-height: 1.65;
+        }
+
+        .section-text .highlight {
+            font-weight: 700;
+            color: white;
+            text-decoration: underline;
+            text-decoration-color: rgba(255, 255, 255, 0.5);
+            text-underline-offset: 3px;
+        }
+
+        /* ==== Animations ==== */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <img src="../assets/GFG_AM_Square.png" alt="GFG AM Logo" class="logo">
+
+    <div class="header">
+        <h1>GFG AM Vision & Mission</h1>
+        <p class="subtitle">Our Purpose & Commitment</p>
+    </div>
+
+    <div class="content-wrapper">
+        <!-- Vision Card -->
+        <div class="vision-card">
+            <h2 class="section-title">Vision</h2>
+            <p class="section-text">
+                To be the <span class="highlight">leading and go-to</span> asset management company in the hospitality industry.
+            </p>
+        </div>
+
+        <!-- Mission Card -->
+        <div class="mission-card">
+            <h2 class="section-title">Mission</h2>
+            <p class="section-text">
+                To design and deliver <span class="highlight">unique and exceptional tailor-made</span> hotel and resort asset management services with the goal of maximizing shareholder value.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
