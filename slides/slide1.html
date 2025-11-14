@@ -180,7 +180,14 @@
 
         .member-card:hover .member-photo {
             border-color: #23CAC5;
+        }
+
+        .member-card:hover .member-photo:not(.flip-horizontal) {
             transform: scale(1.05);
+        }
+
+        .member-card:hover .member-photo.flip-horizontal {
+            transform: scaleX(-1) scale(1.05);
         }
 
         .member-info {
@@ -258,6 +265,21 @@
             transform: scaleX(-1);
         }
 
+        /* Video styling for Kai */
+        .member-video {
+            width: 98px;
+            height: 98px;
+            border-radius: 8px;
+            border: 2px solid #E8ECF1;
+            object-fit: cover;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .member-card:hover .member-video {
+            border-color: #23CAC5;
+        }
+
         /* ==== Animations ==== */
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -269,6 +291,27 @@
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
+    <script>
+        // Kai video autoplay with 2 second delay
+        document.addEventListener('DOMContentLoaded', function() {
+            const kaiVideo = document.getElementById('kai-video');
+            
+            if (kaiVideo) {
+                // Wait 2 seconds after page load, then play video
+                setTimeout(function() {
+                    kaiVideo.play().catch(function(error) {
+                        console.log('Video autoplay failed:', error);
+                    });
+                }, 2000);
+
+                // When video ends, it will automatically pause on last frame (no loop)
+                kaiVideo.addEventListener('ended', function() {
+                    // Video stays paused on last frame
+                    console.log('Kai video finished playing');
+                });
+            }
+        });
+    </script>
 </head>
 <body>
     <img src="../assets/GFG_AM_Square.png" alt="GFG AM Logo" class="logo">
@@ -360,7 +403,17 @@
                     </div>
                 </div>
                 <div class="member-card">
-                    <img src="../assets/Kai.jpg" alt="Kai" class="member-photo">
+                    <video 
+                        id="kai-video"
+                        class="member-video" 
+                        muted 
+                        playsinline
+                        preload="auto"
+                    >
+                        <source src="../assets/Kai.mov" type="video/quicktime">
+                        <source src="../assets/Kai.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                     <div class="member-info">
                         <div class="member-name">Kai</div>
                         <div class="member-title">Virtual Analyst • Quanta Core<br>(AI Support)</div>
