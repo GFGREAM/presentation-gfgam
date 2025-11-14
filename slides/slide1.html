@@ -230,37 +230,32 @@
 
         .bottom-members {
             display: flex;
-            gap: 6px;
+            flex-direction: row;
+            gap: 10px;
             justify-content: space-between;
         }
 
         .bottom-section .member-card {
             flex: 1;
             min-width: 0;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 6px;
         }
 
         .bottom-section .member-photo {
-            width: 77px;
-            height: 77px;
-            margin-bottom: 6px;
-        }
-
-        .bottom-section .member-info {
-            text-align: center;
+            width: 98px;
+            height: 98px;
         }
 
         .bottom-section .member-name {
-            font-size: 11px;
-            margin-bottom: 2px;
+            font-size: 12px;
         }
 
         .bottom-section .member-title {
-            font-size: 8.5px;
-            line-height: 1.2;
+            font-size: 9px;
+        }
+
+        /* Flip specific photos horizontally */
+        .flip-horizontal {
+            transform: scaleX(-1);
         }
 
         /* ==== Animations ==== */
@@ -329,7 +324,7 @@
                         </div>
                     </div>
                     <div class="member-card">
-                        <img src="../assets/Ana.jpg" alt="Ana Borja" class="member-photo">
+                        <img src="../assets/Ana.jpg" alt="Ana Borja" class="member-photo flip-horizontal">
                         <div class="member-info">
                             <div class="member-name">Ana Borja</div>
                             <div class="member-title">Associate Commercial • Commercial Strategy<br>(Top Line Performance)</div>
@@ -344,7 +339,7 @@
             <div class="bottom-title">GFGAM Business Analysis & Research Support, Business Tech & Intel Solutions</div>
             <div class="bottom-members">
                 <div class="member-card">
-                    <img src="../assets/Jose.jpg" alt="Jose Salomon" class="member-photo">
+                    <img src="../assets/Jose.jpg" alt="Jose Salomon" class="member-photo flip-horizontal">
                     <div class="member-info">
                         <div class="member-name">Jose Salomon</div>
                         <div class="member-title">Business Analysis • Business Data<br>(Performance)</div>
