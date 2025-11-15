@@ -62,21 +62,37 @@
             animation-delay: 0.8s;
         }
 
+        .quote-card {
+            background: linear-gradient(135deg, #1A3B5D 0%, #2D5A7B 100%);
+            border-radius: 8px;
+            padding: 35px 40px;
+            box-shadow: 0 4px 12px rgba(26, 59, 93, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .quote-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(26, 59, 93, 0.25);
+        }
+
         .quote {
             font-size: 22px;
             font-weight: 400;
-            color: #555555;
+            color: white;
             line-height: 1.5;
         }
 
         .quote .quote-mark {
             font-size: 26px;
-            color: #1A3B5D;
+            color: #6DD4D0;
         }
 
         .quote .highlight {
             font-weight: 700;
-            color: #1A3B5D;
+            color: white;
+            text-decoration: underline;
+            text-decoration-color: rgba(109, 212, 208, 0.5);
+            text-underline-offset: 3px;
         }
 
         .image-content {
@@ -114,9 +130,11 @@
 
     <div class="content-wrapper">
         <div class="text-content">
-            <p class="quote">
-                <span class="quote-mark">"</span><span class="highlight">Tailor-made</span> integrated Top Line to Bottom Line <span class="highlight">road map</span>, to help our clients <span class="highlight">isolate</span> unnecessary <span class="highlight">noise</span> that can disrupt <span class="highlight">focus</span> on truly <span class="highlight">asset value growth</span> opportunities<span class="quote-mark">"</span>
-            </p>
+            <div class="quote-card">
+                <p class="quote">
+                    <span class="quote-mark">"</span><span class="highlight">Tailor-made</span> integrated Top Line to Bottom Line <span class="highlight">road map</span>, to help our clients <span class="highlight">isolate</span> unnecessary <span class="highlight">noise</span> that can disrupt <span class="highlight">focus</span> on truly <span class="highlight">asset value growth</span> opportunities<span class="quote-mark">"</span>
+                </p>
+            </div>
         </div>
 
         <div class="image-content">
