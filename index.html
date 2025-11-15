@@ -59,7 +59,7 @@
       transition: 'slide',
       backgroundTransition: 'fade',
       hash: true,
-      slideNumber: true,
+      slideNumber: 'c/t',
       preloadIframes: false,
       controls: true,
       progress: true,
@@ -67,32 +67,35 @@
       height: 540
     });
     
-    // Personalizar el formato del slide number
-    Reveal.configure({
-      slideNumber: function() {
-        const indices = Reveal.getIndices();
-        const currentSlide = indices.h;
-        const totalSlides = Reveal.getTotalSlides();
-        
-        // Portada (slide 0) - no mostrar número
-        if (currentSlide === 0) {
-          return '';
-        }
-        
-        // Resto de slides: restar 1 para que empiece en "1 / 18"
-        return currentSlide + ' / ' + (totalSlides - 1);
+    // Función para actualizar el número de slide
+    function updateSlideNumber() {
+      const slideNumberElement = document.querySelector('.slide-number');
+      if (!slideNumberElement) return;
+      
+      const indices = Reveal.getIndices();
+      const currentSlide = indices.h;
+      const totalSlides = Reveal.getTotalSlides() - 1; // Restar la portada
+      
+      if (currentSlide === 0) {
+        // Ocultar número en portada
+        slideNumberElement.style.display = 'none';
+      } else {
+        // Mostrar número personalizado (slide actual / total sin portada)
+        slideNumberElement.style.display = 'block';
+        slideNumberElement.textContent = currentSlide + ' / ' + totalSlides;
       }
+    }
+    
+    // Actualizar al iniciar
+    Reveal.on('ready', function() {
+      updateSlideNumber();
     });
     
-    // Efecto fade-in al cargar un iframe
-    document.querySelectorAll('iframe.slide').forEach(iframe => {
-      iframe.addEventListener('load', () => {
-        iframe.classList.add('loaded');
-      });
-    });
-    
-    // Reinicia animaciones al cambiar de slide (recargando el iframe)
+    // Actualizar al cambiar de slide
     Reveal.on('slidechanged', function(event) {
+      updateSlideNumber();
+      
+      // Reinicia animaciones al cambiar de slide (recargando el iframe)
       const iframe = event.currentSlide.querySelector('iframe');
       if (iframe) {
         iframe.classList.remove('loaded');
@@ -102,6 +105,13 @@
           iframe.src = currentSrc;
         }, 100);
       }
+    });
+    
+    // Efecto fade-in al cargar un iframe
+    document.querySelectorAll('iframe.slide').forEach(iframe => {
+      iframe.addEventListener('load', () => {
+        iframe.classList.add('loaded');
+      });
     });
   </script>
 </body>
