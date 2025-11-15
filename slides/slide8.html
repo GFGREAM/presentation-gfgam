@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="./">
+    <title>Quanta Client Portal</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 960px; height: 540px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: white;
+            padding: 40px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ==== Logo ==== */
+        .logo {
+            position: absolute;
+            top: 20px;
+            right: 60px;
+            height: 35px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        /* ==== Header ==== */
+        .header {
+            margin-bottom: 25px;
+            opacity: 0;
+            animation: fadeUp 1.5s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1A3B5D;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            color: #23CAC5;
+        }
+
+        /* ==== Content Layout ==== */
+        .content-wrapper {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        /* ==== Left Section (Tablet) ==== */
+        .tablet-section {
+            flex: 1;
+            opacity: 0;
+            animation: fadeUp 1.5s ease forwards;
+            animation-delay: 0.8s;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1A3B5D;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .tablet-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(26, 59, 93, 0.15);
+        }
+
+        /* ==== Right Section (Mobile) ==== */
+        .mobile-section {
+            flex: 0 0 380px;
+            opacity: 0;
+            animation: fadeUp 1.5s ease forwards;
+            animation-delay: 1.0s;
+        }
+
+        .mobile-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(26, 59, 93, 0.15);
+        }
+
+        /* ==== Animations ==== */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <img src="../assets/GFG_AM_Square.png" alt="GFG AM Logo" class="logo">
+
+    <div class="header">
+        <h1>Quanta Client Portal</h1>
+        <p class="subtitle">Your Data, Anywhere, Anytime</p>
+    </div>
+
+    <div class="content-wrapper">
+        <!-- Tablet & PC Section -->
+        <div class="tablet-section">
+            <h2 class="section-title">Tablet & PC</h2>
+            <img src="../assets/quantasample1.png" alt="Quanta Portal on Tablet and PC" class="tablet-image">
+        </div>
+
+        <!-- Mobile Section -->
+        <div class="mobile-section">
+            <h2 class="section-title">Mobile</h2>
+            <img src="../assets/quantasample2.png" alt="Quanta Portal on Mobile Devices" class="mobile-image">
+        </div>
+    </div>
+
+</body>
+</html>
