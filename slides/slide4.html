@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="./">
+    <title>Our Focus</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 960px; height: 540px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: white;
+            padding: 40px 60px 30px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ==== Logo ==== */
+        .logo {
+            position: absolute;
+            top: 20px;
+            right: 60px;
+            height: 35px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        /* ==== Header ==== */
+        .header {
+            margin-bottom: 15px;
+            opacity: 0;
+            animation: fadeUp 1.5s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1A3B5D;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            font-weight: 400;
+            color: #23CAC5;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* ==== Pillars Container ==== */
+        .pillars-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            opacity: 0;
+            animation: fadeUp 1.5s ease forwards;
+            animation-delay: 0.8s;
+        }
+
+        /* ==== Individual Pillar ==== */
+        .pillar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .pillar-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1A3B5D;
+            margin-bottom: 3px;
+            text-align: center;
+        }
+
+        .pillar-subtitle {
+            font-size: 10px;
+            font-weight: 500;
+            color: #555555;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .pillar-content {
+            font-size: 8px;
+            line-height: 1.4;
+            color: #555555;
+            text-align: left;
+            width: 100%;
+            margin-bottom: 8px;
+        }
+
+        .pillar-content .mri-letter {
+            font-weight: 700;
+            color: #23CAC5;
+            font-size: 9px;
+        }
+
+        .pillar-tagline {
+            font-size: 13px;
+            font-weight: 700;
+            color: #23CAC5;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* ==== Animations ==== */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <img src="../assets/GFG_AM_Square.png" alt="GFG AM Logo" class="logo">
+
+    <div class="header">
+        <h1>Our Focus</h1>
+    </div>
+
+    <p class="subtitle">"Effective, asset-driven strategies that generate true profitability"</p>
+
+    <div class="pillars-container">
+        <!-- MAXIMIZE -->
+        <div class="pillar">
+            <h2 class="pillar-title">MAXIMIZE</h2>
+            <p class="pillar-subtitle">(Commercial Strategy)</p>
+            <div class="pillar-content">
+                <p><span class="mri-letter">M</span>ONITOR MARKET POSITIONING</p>
+                <p><span class="mri-letter">R</span>EVIEW DISTRIBUTION COSTS & REACH OPTIMAL BUSINESS MIX</p>
+                <p><span class="mri-letter">I</span>DENTIFY PRICING STRATEGY OPPORTUNITIES AND QUANTIFY SALES & MARKETING ACTIONS</p>
+            </div>
+            <p class="pillar-tagline">Win the game</p>
+        </div>
+
+        <!-- OPTIMIZE -->
+        <div class="pillar">
+            <h2 class="pillar-title">OPTIMIZE</h2>
+            <p class="pillar-subtitle">(Operational Effectiveness)</p>
+            <div class="pillar-content">
+                <p><span class="mri-letter">M</span>ONITOR OPERATIONAL COSTS</p>
+                <p><span class="mri-letter">R</span>EVIEW & APPROVE FORECAST & BUDGET PROPOSALS, CAPEX & FLOW</p>
+                <p><span class="mri-letter">I</span>DENTIFY ADDITIONAL REVENUE STREAMS & OPPORTUNITIES FOR OPERATIONAL IMPROVEMENTS</p>
+            </div>
+            <p class="pillar-tagline">Walk the talk</p>
+        </div>
+
+        <!-- ENHANCE -->
+        <div class="pillar">
+            <h2 class="pillar-title">ENHANCE</h2>
+            <p class="pillar-subtitle">(Brand & Guest Experience)</p>
+            <div class="pillar-content">
+                <p><span class="mri-letter">M</span>ONITOR GUEST JOURNEY</p>
+                <p><span class="mri-letter">R</span>EVIEW GUEST EXPERIENCE SURVEYS & CUSTOMER SATISFACTION INDEXES</p>
+                <p><span class="mri-letter">I</span>DENTIFY OPPORTUNITIES TO ELEVATE GUEST EXPERIENCE, IMPROVE SPENDING, RETENTION AND ACQUISITION</p>
+            </div>
+            <p class="pillar-tagline">Make it shine</p>
+        </div>
+
+        <!-- COMMUNICATE -->
+        <div class="pillar">
+            <h2 class="pillar-title">COMMUNICATE</h2>
+            <p class="pillar-subtitle">(Actions & Results)</p>
+            <div class="pillar-content">
+                <p><span class="mri-letter">M</span>ONITOR PERFORMANCE GOALS</p>
+                <p><span class="mri-letter">R</span>EVIEW WEEKLY & MONTHLY ACTION PLAN PROGRESSION & EFFECTIVENESS</p>
+                <p><span class="mri-letter">I</span>MPLEMENT THE RIGHT COMMUNICATION & COLLABORATION PLAN</p>
+            </div>
+            <p class="pillar-tagline">Clear the noise</p>
+        </div>
+    </div>
+
+</body>
+</html>
