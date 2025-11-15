@@ -59,23 +59,29 @@
       transition: 'slide',
       backgroundTransition: 'fade',
       hash: true,
-      slideNumber: function(slide) {
-        const currentIndex = Reveal.getIndices().h;
-        const totalSlides = Reveal.getTotalSlides();
-        
-        // No mostrar número en la portada (slide 0)
-        if (currentIndex === 0) {
-          return '';
-        }
-        
-        // Para el resto de slides, mostrar número actual / total (excluyendo portada)
-        return currentIndex + ' / ' + (totalSlides - 1);
-      },
+      slideNumber: true,
       preloadIframes: false,
       controls: true,
       progress: true,
       width: 960,
       height: 540
+    });
+    
+    // Personalizar el formato del slide number
+    Reveal.configure({
+      slideNumber: function() {
+        const indices = Reveal.getIndices();
+        const currentSlide = indices.h;
+        const totalSlides = Reveal.getTotalSlides();
+        
+        // Portada (slide 0) - no mostrar número
+        if (currentSlide === 0) {
+          return '';
+        }
+        
+        // Resto de slides: restar 1 para que empiece en "1 / 18"
+        return currentSlide + ' / ' + (totalSlides - 1);
+      }
     });
     
     // Efecto fade-in al cargar un iframe
