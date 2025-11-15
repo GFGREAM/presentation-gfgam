@@ -2,19 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>GFG AM Technology Strategy</title>
+  <title>GFG Real Estate Asset Management</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <!-- Reveal.js core -->
   <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/black.css" id="theme">
-
   <style>
     body {
       background: #000;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-
     iframe.slide {
       width: 100%;
       height: 90vh;
@@ -25,7 +22,6 @@
       opacity: 0;
       transition: opacity 0.4s ease-in-out;
     }
-
     /* Cuando se recarga el iframe, aplicamos un efecto fade-in */
     iframe.loaded {
       opacity: 1;
@@ -56,7 +52,6 @@
       <section><iframe src="slides/slide18.html" class="slide"></iframe></section>
     </div>
   </div>
-
   <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
   <script>
     // Inicialización principal de Reveal.js
@@ -64,21 +59,32 @@
       transition: 'slide',
       backgroundTransition: 'fade',
       hash: true,
-      slideNumber: true,
+      slideNumber: function(slide) {
+        const currentIndex = Reveal.getIndices().h;
+        const totalSlides = Reveal.getTotalSlides();
+        
+        // No mostrar número en la portada (slide 0)
+        if (currentIndex === 0) {
+          return '';
+        }
+        
+        // Para el resto de slides, mostrar número actual / total (excluyendo portada)
+        return currentIndex + ' / ' + (totalSlides - 1);
+      },
       preloadIframes: false,
       controls: true,
       progress: true,
       width: 960,
       height: 540
     });
-
+    
     // Efecto fade-in al cargar un iframe
     document.querySelectorAll('iframe.slide').forEach(iframe => {
       iframe.addEventListener('load', () => {
         iframe.classList.add('loaded');
       });
     });
-
+    
     // Reinicia animaciones al cambiar de slide (recargando el iframe)
     Reveal.on('slidechanged', function(event) {
       const iframe = event.currentSlide.querySelector('iframe');
@@ -94,4 +100,3 @@
   </script>
 </body>
 </html>
-
