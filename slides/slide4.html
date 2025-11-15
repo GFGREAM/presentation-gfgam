@@ -49,35 +49,73 @@
             color: #23CAC5;
             font-style: italic;
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
-        /* ==== Flow Container (hexagons + arrows) ==== */
-        .flow-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* ==== Continuity Line ==== */
+        .continuity-line {
+            position: absolute;
+            height: 2px;
+            background: #D0D0D0;
+            left: 60px;
+            right: 60px;
+            top: 180px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards;
+            animation-delay: 0.7s;
+            z-index: 1;
+        }
+
+        /* ==== Pillars Container ==== */
+        .pillars-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: 15px;
-            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ==== Individual Pillar ==== */
+        .pillar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             opacity: 0;
             animation: fadeUp 1.5s ease forwards;
-            animation-delay: 0.8s;
         }
+
+        .pillar:nth-child(1) { animation-delay: 0.9s; }
+        .pillar:nth-child(2) { animation-delay: 1.0s; }
+        .pillar:nth-child(3) { animation-delay: 1.1s; }
+        .pillar:nth-child(4) { animation-delay: 1.2s; }
 
         /* ==== Hexagon ==== */
         .hexagon {
-            width: 90px;
-            height: 90px;
+            width: 100px;
+            height: 100px;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        /* Arrows between hexagons */
+        .pillar:not(:last-child) .hexagon::after {
+            content: '›';
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 40px;
+            color: #D0D0D0;
+            font-weight: 300;
+            z-index: 10;
         }
 
         .hexagon-inner {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #00A9A5 0%, #23CAC5 100%);
+            width: 90px;
+            height: 90px;
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             display: flex;
             align-items: center;
@@ -90,7 +128,7 @@
         }
 
         .hexagon-inner i {
-            font-size: 32px;
+            font-size: 36px;
             color: white;
         }
 
@@ -109,26 +147,6 @@
 
         .hexagon.communicate .hexagon-inner {
             background: linear-gradient(135deg, #7BA3C7 0%, #9BC1E0 100%);
-        }
-
-        /* ==== Arrow ==== */
-        .arrow {
-            font-size: 28px;
-            color: #D0D0D0;
-        }
-
-        /* ==== Pillars Container ==== */
-        .pillars-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-        }
-
-        /* ==== Individual Pillar ==== */
-        .pillar {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         .pillar-title {
@@ -153,7 +171,8 @@
             color: #555555;
             text-align: left;
             width: 100%;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            flex-grow: 1;
         }
 
         .pillar-content .mri-letter {
@@ -168,6 +187,7 @@
             color: #23CAC5;
             text-align: center;
             font-style: italic;
+            margin-top: auto;
         }
 
         /* ==== Animations ==== */
@@ -191,42 +211,17 @@
 
     <p class="subtitle">"Effective, asset-driven strategies that generate true profitability"</p>
 
-    <!-- Hexagons with Icons and Arrows -->
-    <div class="flow-container">
-        <div class="hexagon maximize">
-            <div class="hexagon-inner">
-                <i class="fa-solid fa-tag"></i>
-            </div>
-        </div>
-        
-        <i class="fa-solid fa-chevron-right arrow"></i>
-        
-        <div class="hexagon optimize">
-            <div class="hexagon-inner">
-                <i class="fa-solid fa-magnifying-glass-dollar"></i>
-            </div>
-        </div>
-        
-        <i class="fa-solid fa-chevron-right arrow"></i>
-        
-        <div class="hexagon enhance">
-            <div class="hexagon-inner">
-                <i class="fa-solid fa-star"></i>
-            </div>
-        </div>
-        
-        <i class="fa-solid fa-chevron-right arrow"></i>
-        
-        <div class="hexagon communicate">
-            <div class="hexagon-inner">
-                <i class="fa-solid fa-users-gear"></i>
-            </div>
-        </div>
-    </div>
+    <!-- Continuity Line positioned behind hexagons -->
+    <div class="continuity-line"></div>
 
     <div class="pillars-container">
         <!-- MAXIMIZE -->
         <div class="pillar">
+            <div class="hexagon maximize">
+                <div class="hexagon-inner">
+                    <i class="fa-solid fa-tag"></i>
+                </div>
+            </div>
             <h2 class="pillar-title">MAXIMIZE</h2>
             <p class="pillar-subtitle">(Commercial Strategy)</p>
             <div class="pillar-content">
@@ -239,6 +234,11 @@
 
         <!-- OPTIMIZE -->
         <div class="pillar">
+            <div class="hexagon optimize">
+                <div class="hexagon-inner">
+                    <i class="fa-solid fa-magnifying-glass-dollar"></i>
+                </div>
+            </div>
             <h2 class="pillar-title">OPTIMIZE</h2>
             <p class="pillar-subtitle">(Operational Effectiveness)</p>
             <div class="pillar-content">
@@ -251,6 +251,11 @@
 
         <!-- ENHANCE -->
         <div class="pillar">
+            <div class="hexagon enhance">
+                <div class="hexagon-inner">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
             <h2 class="pillar-title">ENHANCE</h2>
             <p class="pillar-subtitle">(Brand & Guest Experience)</p>
             <div class="pillar-content">
@@ -263,6 +268,11 @@
 
         <!-- COMMUNICATE -->
         <div class="pillar">
+            <div class="hexagon communicate">
+                <div class="hexagon-inner">
+                    <i class="fa-solid fa-users-gear"></i>
+                </div>
+            </div>
             <h2 class="pillar-title">COMMUNICATE</h2>
             <p class="pillar-subtitle">(Actions & Results)</p>
             <div class="pillar-content">
