@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="./">
+    <title>Our Approach</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 960px; height: 540px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: white;
+            padding: 50px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ==== Logo ==== */
+        .logo {
+            position: absolute;
+            top: 20px;
+            right: 60px;
+            height: 35px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        /* ==== Header ==== */
+        .header {
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeUp 1.5s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1A3B5D;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            color: #23CAC5;
+        }
+
+        /* ==== Content Layout ==== */
+        .content-wrapper {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .text-content {
+            flex: 1;
+            opacity: 0;
+            animation: fadeUp 1.5s ease forwards;
+            animation-delay: 0.8s;
+        }
+
+        .quote {
+            font-size: 22px;
+            font-weight: 400;
+            color: #555555;
+            line-height: 1.5;
+        }
+
+        .quote .quote-mark {
+            font-size: 26px;
+            color: #1A3B5D;
+        }
+
+        .quote .highlight {
+            font-weight: 700;
+            color: #1A3B5D;
+        }
+
+        .image-content {
+            flex: 0 0 450px;
+            opacity: 0;
+            animation: fadeIn 1.8s ease forwards;
+            animation-delay: 1.0s;
+        }
+
+        .t2b-diagram {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ==== Animations ==== */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <img src="../assets/GFG_AM_Square.png" alt="GFG AM Logo" class="logo">
+
+    <div class="header">
+        <h1>Our Approach</h1>
+        <p class="subtitle">Eliminating Noise, Maximizing Value</p>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="text-content">
+            <p class="quote">
+                <span class="quote-mark">"</span><span class="highlight">Tailor-made</span> integrated Top Line to Bottom Line <span class="highlight">road map</span>, to help our clients <span class="highlight">isolate</span> unnecessary <span class="highlight">noise</span> that can disrupt <span class="highlight">focus</span> on truly <span class="highlight">asset value growth</span> opportunities<span class="quote-mark">"</span>
+            </p>
+        </div>
+
+        <div class="image-content">
+            <img src="../assets/t2bcircle.jpg" alt="T2B Top to Bottom Circle Diagram" class="t2b-diagram">
+        </div>
+    </div>
+
+</body>
+</html>
